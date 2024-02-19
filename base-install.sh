@@ -7,6 +7,7 @@ main() {
   install_nvim
   install_starship
   install_git #installs updated version of git.
+  install_nix
 
   # If the no-docker argument is not passed, install Docker.
   if [ "$1" != "no-docker" ]; then
@@ -127,6 +128,11 @@ install_git() {
   sudo add-apt-repository ppa:git-core/ppa -y
   sudo apt update -y
   sudo apt install git -y
+}
+
+install_nix() {
+  sh <(curl -L https://nixos.org/nix/install) --daemon
+  sudo echo "experimental-features = nix-command flakes" >> /etc/nix/nix.conf
 }
 
 # Run the main function when the script runs.
