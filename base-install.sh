@@ -131,8 +131,8 @@ install_git() {
 }
 
 install_nix() {
-  sh <(curl -L https://nixos.org/nix/install) --daemon
-  sudo echo "experimental-features = nix-command flakes" >> /etc/nix/nix.conf
+  sudo curl -L https://nixos.org/nix/install | sh -s -- --daemon --yes
+  sudo sh -c 'echo "experimental-features = nix-command flakes" >> /etc/nix/nix.conf'
 }
 
 # Run the main function when the script runs.
