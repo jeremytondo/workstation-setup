@@ -1,10 +1,8 @@
 #!/usr/bin/bash
 
+sudo curl -sS https://raw.githubusercontent.com/jeremytondo/workstation-setup/main/base-install.sh | bash
+
 git clone --bare https://github.com/jeremytondo/dotfiles.git .dotfiles
-
-# alias config='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
-
-# config checkout
 
 git --git-dir=$HOME/.dotfiles --work-tree=$HOME checkout
 
