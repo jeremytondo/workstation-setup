@@ -6,6 +6,6 @@ git clone --bare https://github.com/jeremytondo/dotfiles.git .dotfiles
 
 git --git-dir=$HOME/.dotfiles --work-tree=$HOME checkout
 
-cd /root/.config
+cd .config
 
 ./install
